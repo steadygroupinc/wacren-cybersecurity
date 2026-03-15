@@ -198,10 +198,10 @@ export default function Navigation() {
           <li><Link href="/#components" onClick={() => setIsMenuOpen(false)}>Components</Link></li>
           <li><Link href="/#milestones" onClick={() => setIsMenuOpen(false)}>Milestones</Link></li>
           <li><Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-          <a href="https://trustbroker.africa" className="mobile-cta">TrustBroker Africa</a>
+          <a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer" className="mobile-cta">TrustBroker Africa</a>
         </ul>
 
-        <a href="https://trustbroker.africa" className="nav-cta">
+        <a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer" className="nav-cta">
           TrustBroker Africa <ArrowRight size={14} />
         </a>
         

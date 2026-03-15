@@ -139,8 +139,8 @@ export default function Hero() {
           Building Africa's Cybersecurity Trust Infrastructure for Research and Education — connecting trusted communities, training initiatives, operational incident response teams, and sectoral threat intelligence.
         </p>
         <div className="btn-group">
-          <a href="https://trustbroker.africa" className="btn-primary">Explore TrustBroker Africa ↗</a>
-          <a href="#overview" className="btn-secondary">Learn about the Programme</a>
+          <a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer" className="btn-primary">Explore TrustBroker Africa ↗</a>
+          <a href="#why" className="btn-secondary">Learn about the Programme</a>
         </div>
       </div>
     </section>

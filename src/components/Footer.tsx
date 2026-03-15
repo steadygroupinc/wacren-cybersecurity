@@ -143,24 +143,24 @@ export default function Footer() {
         <div className="footer-links">
           <h4>Programme</h4>
           <ul>
-            <li><a href="#">TrustBroker Africa</a></li>
-            <li><a href="#">Training Resources</a></li>
-            <li><a href="#">WACREN ISAC</a></li>
-            <li><a href="#">CyberBastion League</a></li>
+            <li><a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer">TrustBroker Africa</a></li>
+            <li><a href="#milestones">Training Resources</a></li>
+            <li><a href="#components">WACREN ISAC</a></li>
+            <li><a href="#components">CyberBastion League</a></li>
           </ul>
         </div>
         <div className="footer-links">
           <h4>Events</h4>
           <ul>
-            <li><a href="#">WACREN Conference 2026</a></li>
-            <li><a href="#">TrustBroker Africa Event</a></li>
-            <li><a href="#">Community Calendar</a></li>
+            <li><a href="#milestones">WACREN Conference 2026</a></li>
+            <li><a href="#milestones">TrustBroker Africa Event</a></li>
+            <li><a href="#milestones">Community Calendar</a></li>
           </ul>
         </div>
         <div className="footer-links">
           <h4>Connect</h4>
           <ul>
-            <li><a href="#">Join the Community</a></li>
+            <li><a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer">Join the Community</a></li>
             <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>

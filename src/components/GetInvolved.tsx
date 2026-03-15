@@ -81,9 +81,9 @@ export default function GetInvolved() {
         <h2 className="reveal">Get Involved</h2>
         <p className="reveal">Cybersecurity professionals, research networks, and institutions can participate in the programme through the TrustBroker Africa community.</p>
         <div className="involved-btns reveal">
-          <a href="#" className="btn-primary">Join the Community</a>
-          <a href="#" className="btn-secondary">Participate in Training</a>
-          <a href="#" className="btn-secondary">Contact the Programme Team</a>
+          <a href="https://trustbroker.africa" target="_blank" rel="noopener noreferrer" className="btn-primary">Join the Community ↗</a>
+          <a href="#milestones" className="btn-secondary">Participate in Training</a>
+          <a href="/contact" className="btn-secondary">Contact the Programme Team</a>
         </div>
       </div>
     </section>
