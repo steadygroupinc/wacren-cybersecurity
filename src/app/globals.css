@@ -1,0 +1,78 @@
+:root {
+  scrollbar-gutter: stable;
+  --ink: #f0f3f8;
+  --surface: #e4e9f2;
+  --card: #ffffff;
+  --border: #c8d3e8;
+  --teal: #1a55e8;
+  --teal-dim: rgba(26,85,232,0.07);
+  --amber: #7a8fa8;
+  --amber-dim: rgba(122,143,168,0.1);
+  --text: #1c2c46;
+  --muted: #5a7090;
+  --white: #ffffff;
+  --grey: #7a8fa8;
+  --grey-dark: #3d5068;
+  --grey-light: #c8d3e8;
+  --hero-bg: #0c1836;
+  --hero-card: #142047;
+  --hero-border: #1e3268;
+  --blue-light: #4d86ff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --mono: var(--font-space-mono), monospace;
+  --sans: var(--font-syne), sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  /* Site sections responsiveness */
+  section {
+    padding: 4rem 1.5rem !important;
+  }
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+/* Global link fixes to prevent default blue */
+a, a:active, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Mobile Nav Animation utility */
+.nav-links-open {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: translateY(0) !important;
+}
