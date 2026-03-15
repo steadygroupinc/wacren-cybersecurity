@@ -152,7 +152,7 @@ export default function Footer() {
         <div className="footer-links">
           <h4>Events</h4>
           <ul>
-            <li><a href="#milestones">WACREN Conference 2026</a></li>
+            <li><a href="https://wacren2026.wacren.net/" target="_blank" rel="noopener noreferrer">WACREN Conference 2026</a></li>
             <li><a href="#milestones">TrustBroker Africa Event</a></li>
             <li><a href="#milestones">Community Calendar</a></li>
           </ul>

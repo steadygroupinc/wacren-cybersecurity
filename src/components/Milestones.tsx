@@ -5,7 +5,8 @@ const milestoneData = [
   {
     date: "26–27 March 2026",
     title: "WACREN Conference 2026",
-    desc: "The WACREN Conference will showcase the full cybersecurity ecosystem connecting community collaboration, training initiatives, operational CSIRTs, and sectoral threat intelligence capabilities."
+    desc: "The WACREN Conference will showcase the full cybersecurity ecosystem connecting community collaboration, training initiatives, operational CSIRTs, and sectoral threat intelligence capabilities.",
+    link: "https://wacren2026.wacren.net/"
   },
   {
     date: "15–22 May 2026",
@@ -127,6 +128,24 @@ export default function Milestones() {
                     <li key={i}>{activity}</li>
                   ))}
                 </ul>
+              )}
+              {milestone.link && (
+                <div style={{ marginTop: '1.5rem' }}>
+                  <a href={milestone.link} target="_blank" rel="noopener noreferrer" style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: '0.7rem',
+                    color: 'var(--teal)',
+                    textDecoration: 'none',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    fontWeight: 700,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}>
+                    View Conference Details ↗
+                  </a>
+                </div>
               )}
             </div>
           ))}
