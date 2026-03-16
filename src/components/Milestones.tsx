@@ -40,7 +40,7 @@ export default function Milestones() {
   }, []);
 
   return (
-    <section id="milestones" style={{ padding: '6rem 2.5rem', background: 'var(--ink)' }} ref={sectionRef}>
+    <section id="milestones" style={{ padding: '4rem 2.5rem', background: 'var(--ink)' }} ref={sectionRef}>
       <style jsx>{`
         .milestones-inner { max-width: 1100px; margin: 0 auto; }
         
@@ -64,19 +64,19 @@ export default function Milestones() {
 
         .milestones-grid {
           display: grid; grid-template-columns: 1fr 1fr;
-          gap: 1.5rem; margin-top: 2.5rem;
+          gap: 1.5rem; margin-top: 2rem;
         }
         .milestone-card {
           border: 1px solid var(--border);
           border-top: 3px solid var(--grey);
           background: var(--card);
-          padding: 2rem; position: relative; overflow: hidden;
+          padding: 1.5rem; position: relative; overflow: hidden;
           transition: border-color 0.2s, box-shadow 0.2s;
         }
         .milestone-card:hover {
           border-color: var(--teal);
           border-top-color: var(--teal);
-          box-shadow: 0 6px 20px rgba(26,85,232,0.09);
+          box-shadow: 0 6px 20px rgba(0, 74, 153, 0.09);
         }
         .milestone-date {
           font-family: var(--mono); font-size: 0.72rem;
@@ -106,7 +106,7 @@ export default function Milestones() {
         }
 
         @media (max-width: 900px) {
-          #milestones { padding: 4rem 1.25rem !important; }
+          #milestones { padding: 3rem 1.25rem !important; }
           .milestones-grid { grid-template-columns: 1fr; gap: 1rem; }
           .milestone-card { padding: 1.5rem; }
           h3 { font-size: 1rem; }

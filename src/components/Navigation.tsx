@@ -21,6 +21,9 @@ export default function Navigation() {
     <>
     <header className="header-sticky">
       <style jsx global>{`
+        :root {
+          --font-outfit-fallback: "Outfit", sans-serif;
+        }
         .header-sticky {
           position: fixed !important;
           top: 0 !important;
@@ -28,17 +31,17 @@ export default function Navigation() {
           right: 0;
           z-index: 2000 !important;
           width: 100%;
-          background: #fff;
+          background: var(--white);
         }
         .top-bar {
-          background: #1c2c46 !important;
+          background: var(--teal) !important;
           width: 100%;
           display: flex !important;
           justify-content: center !important;
           align-items: center !important;
         }
         .top-bar-content {
-          padding: 0.5rem 1.5rem;
+          padding: 0.4rem 1rem;
           display: flex !important;
           justify-content: center !important;
           align-items: center !important;
@@ -46,13 +49,14 @@ export default function Navigation() {
         }
         .top-bar span {
           font-family: var(--mono);
-          font-size: 0.58rem;
-          color: #c8d3e8 !important;
-          letter-spacing: 0.12em;
+          font-size: 0.52rem;
+          color: rgba(255,255,255,0.8) !important;
+          letter-spacing: 0.08em;
           text-transform: uppercase;
           line-height: 1.4;
           text-align: center;
           display: inline-block;
+          max-width: 100%;
         }
         .top-bar a {
           color: #ffffff !important;
@@ -66,18 +70,18 @@ export default function Navigation() {
           align-items: center; 
           justify-content: space-between;
           padding: 0.8rem 2.5rem;
-          background: rgba(255,255,255,0.95);
-          backdrop-filter: blur(16px);
+          background: rgba(255,255,255,0.98);
+          backdrop-filter: blur(20px);
           border-bottom: 1px solid var(--border);
-          box-shadow: 0 4px 20px rgba(28,44,70,0.05);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.04);
         }
         
         .nav-logo {
-          font-family: var(--mono); font-size: 0.7rem; color: #008080 !important;
+          font-family: var(--mono); font-size: 0.7rem; color: var(--teal) !important;
           letter-spacing: 0.1em; text-transform: uppercase;
           text-decoration: none !important;
         }
-        .nav-logo span { color: #1c2c46 !important; }
+        .nav-logo span { color: var(--text) !important; }
         
         .nav-links { 
           display: flex; gap: 2rem; list-style: none; align-items: center;
@@ -88,19 +92,19 @@ export default function Navigation() {
           text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
           transition: color 0.2s;
         }
-        .nav-links li a:hover { color: #008080; }
+        .nav-links li a:hover { color: var(--teal); }
         
         .nav-cta {
           font-family: var(--mono); font-size: 0.68rem;
-          background: #008080; color: #fff;
-          border: none; padding: 0.5rem 1.2rem; cursor: pointer;
+          background: var(--teal); color: #fff !important;
+          border: none; padding: 0.55rem 1.4rem; cursor: pointer;
           letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;
           text-decoration: none;
         }
 
         .mobile-toggle {
           display: none;
-          background: none; border: none; color: #1c2c46;
+          background: none; border: none; color: var(--text);
           cursor: pointer;
         }
 
@@ -112,23 +116,29 @@ export default function Navigation() {
           
           .nav-links {
             position: fixed; 
-            top: 5.5rem; 
-            right: 1.5rem; 
-            left: 1.5rem;
+            top: 4.5rem; 
+            right: 0; 
+            left: 0;
             background: #fff;
             flex-direction: column; 
             justify-content: flex-start; 
-            align-items: flex-start;
-            padding: 2.22rem 1.5rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 80px rgba(0,0,0,0.2);
-            border: 1px solid rgba(0,0,0,0.08);
+            align-items: center;
+            padding: 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--border);
             opacity: 0;
             pointer-events: none;
-            transform: translateY(-20px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
             z-index: 1050;
-            gap: 0.6rem;
+            gap: 1.5rem;
+            height: auto;
+            max-height: calc(100vh - 4.5rem);
+            overflow-y: auto;
+          }
+          .nav-links-open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
           }
 
           .nav-links li { 
@@ -138,16 +148,18 @@ export default function Navigation() {
           }
           
           .nav-links li a { 
-            font-size: 0.72rem !important; 
+            font-size: 0.85rem !important; 
             font-family: var(--sans) !important; 
-            font-weight: 800 !important;
-            color: #0055b8 !important;
-            letter-spacing: 0.02em !important; 
-            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            color: var(--text) !important;
+            letter-spacing: 0.01em !important; 
+            text-transform: none !important;
             width: 100% !important;
             display: block !important;
             text-decoration: none !important;
+            text-align: center;
           }
+          .nav-links li a:hover { color: var(--teal) !important; }
 
           .nav-links li:nth-child(2) {
             border-bottom: 2px solid #f0f3f8;
@@ -158,7 +170,7 @@ export default function Navigation() {
           .mobile-cta {
             display: block !important;
             width: 100%;
-            background: #e67e22 !important;
+            background: var(--amber) !important;
             color: #ffffff !important;
             text-align: center;
             padding: 0.85rem;

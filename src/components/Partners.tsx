@@ -2,10 +2,9 @@
 import React, { useEffect, useRef } from 'react';
 
 const partnerData = [
-  "WACREN",
-  "TrustBroker Africa",
-  "Open CSIRT Foundation",
-  "AfricaConnect / Global Gateway"
+  { name: "WACREN", logo: "/images/wacren.png", fallback: "WACREN" },
+  { name: "TrustBroker Africa", logo: "/images/trustbroker.jpg", fallback: "TrustBroker Africa" },
+  { name: "Open CSIRT Foundation", logo: "/images/open-csirt.png", fallback: "Open CSIRT Foundation" }
 ];
 
 export default function Partners() {
@@ -31,7 +30,7 @@ export default function Partners() {
       <style jsx>{`
         #partners {
           max-width: 1100px; margin: 0 auto; text-align: center;
-          padding: 5rem 2.5rem; background: var(--surface);
+          padding: 6rem 1.25rem; background: var(--surface);
           border-top: 1px solid var(--border);
         }
         
@@ -48,32 +47,66 @@ export default function Partners() {
         }
 
         h2 {
-          font-family: var(--sans); font-size: clamp(1.8rem, 3vw, 2.8rem);
+          font-family: var(--sans); font-size: clamp(1.8rem, 4vw, 2.8rem);
           font-weight: 800; color: var(--text); line-height: 1.12;
-          letter-spacing: -0.02em; margin-bottom: 1.5rem;
+          letter-spacing: -0.02em; margin-bottom: 3rem;
         }
 
-        .partners-row {
-          display: flex; justify-content: center; align-items: center;
-          gap: 2.5rem; flex-wrap: wrap; margin-top: 2.5rem;
+        .partners-grid {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 3rem;
+          flex-wrap: wrap;
+          margin-top: 1rem;
         }
-        .partner-badge {
-          border: 1px solid var(--border);
-          background: var(--card);
-          padding: 1rem 2rem;
-          font-family: var(--mono); font-size: 0.72rem;
-          color: var(--grey); letter-spacing: 0.1em; text-transform: uppercase;
-          transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
-          box-shadow: 0 2px 8px rgba(26,44,70,0.06);
+
+        .partner-logo-container {
+          width: 200px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          padding: 1rem;
         }
-        .partner-badge:hover { border-color: var(--teal); color: var(--teal); box-shadow: 0 4px 16px rgba(26,85,232,0.10); }
+
+        .partner-logo-container:hover {
+          transform: translateY(-4px) scale(1.05);
+        }
+
+        .logo-img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          filter: grayscale(100%);
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
+
+        .partner-logo-container:hover .logo-img {
+          filter: grayscale(0%);
+          opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+          .partners-grid {
+            gap: 1.5rem;
+          }
+          .partner-logo-container {
+            width: 160px;
+            height: 80px;
+          }
+        }
       `}</style>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div className="section-label reveal">Ecosystem</div>
         <h2 className="reveal">Partners</h2>
-        <div className="partners-row reveal">
+        <div className="partners-grid reveal">
           {partnerData.map((partner, index) => (
-            <div key={index} className="partner-badge">{partner}</div>
+            <div key={index} className="partner-logo-container">
+              <img src={partner.logo} alt={partner.name} className="logo-img" title={partner.name} />
+            </div>
           ))}
         </div>
       </div>

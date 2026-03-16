@@ -90,10 +90,10 @@ export default function Components() {
         .component-card:hover {
           border-color: var(--teal);
           transform: translateY(-3px);
-          box-shadow: 0 8px 28px rgba(26,85,232,0.10);
+          box-shadow: 0 8px 28px rgba(0, 74, 153, 0.10);
         }
-        .component-card.amber-card { border-left: 3px solid var(--grey); }
-        .component-card.amber-card:hover { border-color: #3d5068; box-shadow: 0 8px 28px rgba(60,80,104,0.10); }
+        .component-card.amber-card { border-left: 3px solid var(--amber); }
+        .component-card.amber-card:hover { border-color: var(--amber); box-shadow: 0 8px 28px rgba(230,126,34,0.10); }
         
         .card-tag {
           font-family: var(--mono); font-size: 0.6rem;
@@ -104,8 +104,8 @@ export default function Components() {
         .card-tag::before {
           content: ''; display: block; width: 1.5rem; height: 1px; background: var(--teal);
         }
-        .amber-card .card-tag { color: var(--grey); }
-        .amber-card .card-tag::before { background: var(--grey); }
+        .amber-card .card-tag { color: var(--amber); }
+        .amber-card .card-tag::before { background: var(--amber); }
         
         h3 {
           font-family: var(--sans); font-size: 1.15rem;
@@ -121,22 +121,23 @@ export default function Components() {
           transition: opacity 0.2s;
         }
         .component-card a:hover { opacity: 0.7; }
-        .amber-card a { color: var(--grey); }
+        .amber-card a { color: var(--amber); }
         
         .status-badge {
           display: inline-block;
           font-family: var(--mono); font-size: 0.58rem;
-          color: var(--grey); border: 1px solid var(--grey);
+          color: var(--amber); border: 1px solid var(--amber);
           padding: 0.1rem 0.4rem; letter-spacing: 0.1em;
           text-transform: uppercase; margin-top: 0.3rem;
         }
 
         @media (max-width: 900px) {
-          #components { padding: 4rem 1.25rem; }
+          #components { padding: 3rem 1.25rem !important; }
           .component-grid { grid-template-columns: 1fr; gap: 1rem; }
-          .component-card { padding: 1.5rem; }
+          .component-card { padding: 1.25rem; }
           h3 { font-size: 1.05rem; }
-          .component-card p { font-size: 0.85rem; }
+          .component-card p { font-size: 0.85rem; line-height: 1.6; }
+          .status-badge { font-size: 0.52rem; }
         }
       `}</style>
       <div className="components-inner">

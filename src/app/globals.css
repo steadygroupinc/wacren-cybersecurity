@@ -1,23 +1,23 @@
 :root {
   scrollbar-gutter: stable;
-  --ink: #f0f3f8;
-  --surface: #e4e9f2;
+  --ink: #f9f6f3;
+  --surface: #f0edea;
   --card: #ffffff;
-  --border: #c8d3e8;
-  --teal: #1a55e8;
-  --teal-dim: rgba(26,85,232,0.07);
-  --amber: #7a8fa8;
-  --amber-dim: rgba(122,143,168,0.1);
-  --text: #1c2c46;
-  --muted: #5a7090;
+  --border: #e0dbd5;
+  --teal: #004a99;
+  --teal-dim: rgba(0, 74, 153, 0.07);
+  --amber: #e67e22;
+  --amber-dim: rgba(230, 126, 34, 0.1);
+  --text: #323232;
+  --muted: #595959;
   --white: #ffffff;
-  --grey: #7a8fa8;
-  --grey-dark: #3d5068;
-  --grey-light: #c8d3e8;
-  --hero-bg: #0c1836;
-  --hero-card: #142047;
-  --hero-border: #1e3268;
-  --blue-light: #4d86ff;
+  --grey: #808080;
+  --grey-dark: #4d4d4d;
+  --grey-light: #e0dbd5;
+  --hero-bg: #003366;
+  --hero-card: #004080;
+  --hero-border: #0059b3;
+  --blue-light: #0066cc;
 }
 
 *, *::before, *::after {
@@ -31,14 +31,21 @@ html {
 }
 
 body {
-  --mono: var(--font-space-mono), monospace;
-  --sans: var(--font-syne), sans-serif;
+  --mono: var(--font-outfit), sans-serif;
+  --sans: var(--font-outfit), sans-serif;
   background: var(--ink);
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Scroll reveal animations */
@@ -56,8 +63,23 @@ body {
 @media (max-width: 900px) {
   /* Site sections responsiveness */
   section {
-    padding: 4rem 1.5rem !important;
+    padding: 3rem 1.25rem !important;
   }
+  h1 { font-size: clamp(2rem, 8vw, 3rem) !important; line-height: 1.1 !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; line-height: 1.2 !important; }
+  
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2.5rem 1rem !important;
+  }
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
 }
 
 .no-scroll {
@@ -68,6 +90,88 @@ body {
 a, a:active, a:visited {
   color: inherit;
   text-decoration: none;
+}
+
+/* Critical CSS to prevent FOUC */
+#hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+  background: #003366;
+  max-width: 100%;
+  text-align: left;
+}
+
+.hero-content { position: relative; z-index: 1; width: 100%; }
+
+.hero-eyebrow {
+  font-family: var(--font-outfit), sans-serif; font-size: 0.72rem;
+  color: #e67e22; letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+
+h1 {
+  font-family: var(--font-outfit), sans-serif; font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800; color: #e8f0ff; line-height: 1.1;
+  margin-bottom: 1.5rem; letter-spacing: -0.02em;
+  width: 100%;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem; color: #c8d3e8; width: 100%;
+  margin-bottom: 2rem; line-height: 1.8;
+  max-width: none;
+}
+
+.btn-group { 
+  display: flex; 
+  gap: 1.5rem; 
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+}
+
+.btn-primary {
+  font-family: var(--font-outfit), sans-serif; font-size: 0.78rem;
+  background: #e67e22; color: #fff !important;
+  border: none; padding: 0.9rem 1.8rem; cursor: pointer;
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none; display: inline-block;
+}
+
+.btn-secondary {
+  font-family: var(--font-outfit), sans-serif; font-size: 0.78rem;
+  background: transparent; color: #fff !important;
+  border: 1px solid #2a4278; padding: 0.9rem 1.8rem; cursor: pointer;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+  text-decoration: none; display: inline-block;
+}
+
+/* Section base styles */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-outfit), sans-serif; font-size: 0.68rem;
+  color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+h2 {
+  font-family: var(--font-outfit), sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800; color: var(--text); line-height: 1.12;
+  letter-spacing: -0.02em; margin-bottom: 1.5rem;
 }
 
 /* Mobile Nav Animation utility */

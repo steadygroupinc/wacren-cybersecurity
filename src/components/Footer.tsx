@@ -44,80 +44,88 @@ export default function Footer() {
     <footer>
       <style jsx>{`
         footer {
-          background: #2a3a52;
-          border-top: 3px solid var(--teal);
-          padding: 3rem 2.5rem;
+          background: #002d5c;
+          border-top: 3px solid var(--amber);
+          padding: 4rem 2.5rem 2rem;
+          color: #ffffff;
         }
         .footer-inner {
           max-width: 1100px; margin: 0 auto;
           display: flex; justify-content: space-between; align-items: flex-start;
-          gap: 2rem; flex-wrap: wrap;
+          gap: 3rem; flex-wrap: wrap;
         }
+        .footer-brand { flex: 1; min-width: 280px; }
         .nav-logo {
-          font-family: var(--mono); font-size: 0.8rem; color: #4d86ff !important;
+          font-family: var(--mono); font-size: 0.8rem; color: #7ab4ff !important;
           letter-spacing: 0.1em; text-transform: uppercase;
-          margin-bottom: 0.75rem; display: block;
+          margin-bottom: 1rem; display: block;
         }
         .nav-logo span { color: #ffffff !important; }
         
         .footer-brand p {
-          font-size: 0.82rem; color: #7a9abf; max-width: 320px; line-height: 1.7;
+          font-size: 0.82rem; color: #c8d3e8; max-width: 360px; line-height: 1.7;
           margin-bottom: 1.5rem;
         }
 
-        .social-links {
-          display: flex;
-          gap: 0.75rem;
-          margin-top: 1.5rem;
-        }
+        .social-links { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
         .social-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(77, 134, 255, 0.2);
-          border-radius: 8px;
-          color: #7a9abf;
-          transition: all 0.2s ease;
-          text-decoration: none;
+          display: flex; align-items: center; justify-content: center;
+          width: 36px; height: 36px; background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(122, 180, 255, 0.2); border-radius: 8px;
+          color: #c8d3e8; transition: all 0.2s ease; text-decoration: none;
         }
         .social-link:hover {
-          background: rgba(77, 134, 255, 0.1);
-          border-color: #4d86ff;
-          color: #ffffff;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(77, 134, 255, 0.15);
+          background: rgba(122, 180, 255, 0.1); border-color: #7ab4ff;
+          color: #ffffff; transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 74, 153, 0.25);
         }
         
+        .footer-links { min-width: 140px; }
         .footer-links h4 {
           font-family: var(--mono); font-size: 0.68rem;
-          color: #4d86ff; letter-spacing: 0.15em; text-transform: uppercase;
-          margin-bottom: 0.75rem;
+          color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase;
+          margin-bottom: 1.25rem;
         }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.4rem; }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 0.6rem; }
         .footer-links :global(a) {
-          font-size: 0.82rem; color: #ffffff !important; text-decoration: none;
+          font-size: 0.82rem; color: #e2e8f0 !important; text-decoration: none;
           transition: all 0.2s;
         }
-        .footer-links :global(a:hover) { opacity: 0.8 !important; }
+        .footer-links :global(a:hover) { color: var(--amber) !important; }
         
-        .footer-bottom {
-          max-width: 1100px; margin: 2rem auto 0;
-          padding-top: 1.5rem; border-top: 1px solid #3d5270;
-          display: flex; justify-content: space-between;
-          font-family: var(--mono); font-size: 0.65rem; color: #a0aec0;
-          letter-spacing: 0.05em;
+        .footer-logos {
+          max-width: 1100px; margin: 4rem auto 2rem;
+          padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1);
+          display: flex; justify-content: center; align-items: center;
+          gap: 3rem; flex-wrap: wrap;
+        }
+        .logo-placeholder {
+          font-family: var(--mono); font-size: 0.6rem; color: #a0aec0;
+          letter-spacing: 0.1em; text-transform: uppercase;
+          border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.8rem 1.75rem;
+          background: rgba(255, 255, 255, 0.02);
         }
 
-        @media (max-width: 600px) {
-          .footer-bottom {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-          }
+        .footer-bottom {
+          max-width: 1100px; margin: 0 auto;
+          padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.05);
+          display: flex; justify-content: space-between; align-items: center;
+          font-family: var(--mono); font-size: 0.65rem; color: #718096;
+          letter-spacing: 0.05em; gap: 2rem;
+        }
+        .footer-bottom div:last-child { max-width: 600px; text-align: right; line-height: 1.6; }
+
+        @media (max-width: 900px) {
+          footer { padding: 4rem 1.5rem 2rem; }
+          .footer-inner { flex-direction: column; gap: 2.5rem; }
+          .footer-brand { text-align: center; }
+          .footer-brand p { margin: 0 auto 1.5rem; }
+          .social-links { justify-content: center; }
+          .footer-links { text-align: center; width: 100%; }
+          .footer-logos { gap: 1.5rem; margin: 3rem auto 1.5rem; padding-top: 2rem; }
+          .footer-bottom { flex-direction: column; text-align: center; gap: 1.5rem; }
+          .footer-bottom div:last-child { text-align: center; max-width: 100%; }
         }
       `}</style>
       <div className="footer-inner">
@@ -167,8 +175,24 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <div>© 2026 WACREN. All Rights Reserved.</div>
-        <div>Cybersecurity &amp; Trust Programme</div>
+        <div className="support-text">The WACREN Cybersecurity Program is supported by the AfricaConnect Project co-funded by the European Union through the Global Gateway Program.</div>
       </div>
+      <style jsx>{`
+
+        .footer-bottom {
+          max-width: 1100px; margin: 0 auto;
+          padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.05);
+          display: flex; justify-content: space-between; align-items: center;
+          font-family: var(--mono); font-size: 0.65rem; color: #718096;
+          letter-spacing: 0.05em; gap: 3rem;
+        }
+        .support-text { max-width: 600px; text-align: right; line-height: 1.7; }
+
+        @media (max-width: 900px) {
+          .footer-bottom { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2.5rem 1.25rem; }
+          .support-text { text-align: center; max-width: 100%; }
+        }
+      `}</style>
     </footer>
   );
 }

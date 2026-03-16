@@ -22,7 +22,7 @@ export default function Architecture() {
   return (
     <section id="architecture" ref={sectionRef}>
       <style jsx>{`
-        #architecture { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem 6rem; }
+        #architecture { max-width: 1100px; margin: 0 auto; padding: 3rem 2.5rem 4rem; }
         
         .section-label {
           font-family: var(--mono); font-size: 0.68rem;
@@ -44,55 +44,50 @@ export default function Architecture() {
         }
 
         .arch-full {
-          margin-top: 2.5rem;
-          border: 1px solid var(--border);
-          background: var(--text);
-          padding: 3rem 2rem;
+          margin-top: 2rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--hero-bg);
+          padding: 2rem 1.5rem;
           display: flex; flex-direction: column; align-items: center;
           gap: 0.5rem;
+          border-radius: 4px;
         }
         .arch-full-node {
           width: 100%; max-width: 480px;
-          border: 1px solid #2a3e6a;
+          border: 1px solid rgba(255,255,255,0.1);
           padding: 1rem 1.5rem;
           text-align: center;
           position: relative;
           transition: border-color 0.2s;
-          background: #1a2d52;
+          background: rgba(255,255,255,0.03);
         }
-        .arch-full-node:hover { border-color: #4d86ff; }
-        .arch-full-node.top { border-color: #4d86ff; background: rgba(26,85,232,0.25); }
+        .arch-full-node:hover { border-color: var(--amber); }
+        .arch-full-node.top { border-color: var(--amber); background: rgba(230,126,34,0.1); }
         .arch-full-node.bottom { border-color: var(--grey); background: rgba(122,143,168,0.2); }
         
         .node-label {
           font-family: var(--mono); font-size: 0.85rem;
-          letter-spacing: 0.06em; color: #ddeeff; font-weight: 700;
+          letter-spacing: 0.06em; color: #ffffff; font-weight: 700;
         }
-        .node-sub { font-size: 0.68rem; color: #7a9acc; margin-top: 0.2rem; font-family: var(--mono); }
-        .arch-full-arrow { color: #4d86ff; font-size: 1.2rem; opacity: 0.6; }
+        .node-sub { font-size: 0.68rem; color: #c8d3e8; margin-top: 0.2rem; font-family: var(--mono); }
+        .arch-full-arrow { color: var(--amber); font-size: 1.2rem; opacity: 0.8; }
         
-        .arch-caption {
-          text-align: center; font-size: 0.82rem; color: var(--grey);
-          max-width: 560px; margin: 1.5rem auto 0;
-          font-style: italic; line-height: 1.7;
-        }
+
 
         @media (max-width: 900px) {
-          #architecture { padding: 4rem 1.25rem 4rem; }
-          .arch-full { padding: 2rem 1rem; gap: 0.25rem; }
+          #architecture { padding: 3rem 1.25rem 3rem; }
+          .arch-full { padding: 1.5rem 1rem; gap: 0.25rem; }
           .arch-full-node { 
             padding: 0.8rem 1rem; 
             max-width: 100%;
           }
           .node-label { font-size: 0.75rem; }
           .node-sub { font-size: 0.6rem; }
-          .arch-full-arrow { font-size: 1rem; }
-          .arch-caption { font-size: 0.75rem; margin-top: 1rem; }
+          .arch-full-arrow { font-size: 1.2rem; margin: 0.25rem 0; }
+          .arch-caption { font-size: 0.78rem; margin-top: 1.25rem; padding: 0 0.5rem; }
         }
         .divider { height: 4px; background: linear-gradient(90deg, var(--teal) 0%, var(--grey) 50%, transparent 100%); opacity: 0.3; }
       `}</style>
-      
-      <div className="divider"></div>
       
       <div style={{ maxWidth: '1100px', margin: '0 auto', paddingTop: '4rem' }}>
         <div className="section-label grey reveal">Architecture</div>
@@ -120,9 +115,7 @@ export default function Architecture() {
           </div>
         </div>
         
-        <p className="arch-caption reveal">
-          The WACREN Cybersecurity &amp; Trust Programme connects community collaboration, training initiatives, operational teams, and threat intelligence capabilities.
-        </p>
+
       </div>
     </section>
   );

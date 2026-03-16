@@ -34,7 +34,7 @@ export default function ScrollToTop() {
           bottom: 2rem;
           right: 2rem;
           z-index: 1000;
-          background: var(--teal, #1a55e8);
+          background: var(--teal);
           color: white;
           width: 45px;
           height: 45px;
@@ -47,7 +47,7 @@ export default function ScrollToTop() {
           transform: translateY(20px);
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           border: none;
-          box-shadow: 0 4px 15px rgba(26, 85, 232, 0.3);
+          box-shadow: 0 4px 15px rgba(0, 74, 153, 0.3);
           pointer-events: none;
         }
 
@@ -58,9 +58,9 @@ export default function ScrollToTop() {
         }
 
         .scroll-to-top:hover {
-          background: #0044cc;
+          background: var(--amber);
           transform: scale(1.05);
-          box-shadow: 0 6px 20px rgba(26, 85, 232, 0.4);
+          box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
         }
 
         @media (max-width: 600px) {

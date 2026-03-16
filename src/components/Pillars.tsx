@@ -43,7 +43,7 @@ export default function Pillars() {
   }, []);
 
   return (
-    <section id="overview" style={{ padding: '6rem 2.5rem' }} ref={sectionRef}>
+    <section id="overview" style={{ padding: '4rem 2.5rem' }} ref={sectionRef}>
       <style jsx>{`
         .overview-inner { max-width: 1100px; margin: 0 auto; }
         
@@ -68,14 +68,14 @@ export default function Pillars() {
           display: grid; grid-template-columns: repeat(4, 1fr);
           gap: 1px; background: var(--border);
           border: 1px solid var(--border);
-          margin-top: 2.5rem;
+          margin-top: 2rem;
         }
         .pillar {
           background: var(--card); padding: 1.5rem;
           position: relative; overflow: hidden;
           transition: background 0.2s, box-shadow 0.2s;
         }
-        .pillar:hover { background: #f7f9fd; box-shadow: inset 0 0 0 1px var(--teal); }
+        .pillar:hover { background: var(--teal-dim); box-shadow: inset 0 0 0 1px var(--teal); }
         .pillar::before {
           content: ''; position: absolute; top: 0; left: 0; right: 0;
           height: 3px; background: var(--teal); transform: scaleX(0);
@@ -84,14 +84,15 @@ export default function Pillars() {
         .pillar:hover::before { transform: scaleX(1); }
         .pillar-num {
           font-family: var(--mono); font-size: 2rem; font-weight: 700;
-          color: #c8d3e8; margin-bottom: 0.75rem; line-height: 1;
+          color: var(--grey-light); margin-bottom: 0.75rem; line-height: 1;
         }
         .pillar-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
         .pillar-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
         @media (max-width: 900px) {
-          .pillars { grid-template-columns: 1fr; background: none; gap: 1rem; }
-          .pillar { border: 1px solid var(--border); }
+          .pillars { grid-template-columns: 1fr; background: none; gap: 0.75rem; }
+          .pillar { border: 1px solid var(--border); padding: 1.25rem; }
+          .pillar-num { font-size: 1.6rem; }
         }
       `}</style>
       <div className="overview-inner">

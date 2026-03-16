@@ -37,7 +37,7 @@ export default function ContactPage() {
             font-family: var(--sans);
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: var(--text);
+            color: #004998 !important;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
           }
@@ -86,10 +86,10 @@ export default function ContactPage() {
           }
 
           .contact-form-container {
-            background: #fff;
+            background: var(--white);
             padding: 3rem;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 24px rgba(0, 74, 153, 0.03);
           }
 
           .form-grid {
@@ -132,36 +132,44 @@ export default function ContactPage() {
             font-family: var(--mono);
             font-size: 0.85rem;
             font-weight: 700;
-            background: var(--teal);
+            background: var(--amber);
             color: #fff;
             border: none;
-            padding: 1rem 2rem;
+            padding: 1.1rem 2.22rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
           }
 
           .btn-submit:hover {
-            opacity: 0.9;
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.35);
           }
 
           @media (max-width: 900px) {
             .contact-section {
               grid-template-columns: 1fr;
-              padding: 7rem 1.5rem 4rem;
-              gap: 2.5rem;
+              padding: 6rem 1.25rem 4rem;
+              gap: 3rem;
               text-align: center;
             }
             .subtitle {
               margin: 0 auto 2rem;
+              font-size: 0.95rem;
             }
             .info-group {
               align-items: center;
               text-align: center;
+              gap: 1.25rem;
             }
             .contact-form-container {
-              padding: 1.5rem;
+              padding: 1.5rem 1.25rem;
+            }
+            .btn-submit {
+              width: 100%;
             }
           }
         `}</style>
