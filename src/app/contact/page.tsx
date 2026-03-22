@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Info, Lock } from 'lucide-react';
 
 export default function ContactPage() {
   const [showPhone, setShowPhone] = useState(false);
@@ -143,10 +143,82 @@ export default function ContactPage() {
             box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
           }
 
+          .maintenance-notice {
+            background: #f0f7ff;
+            border: 1px solid #cce3fd;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: left;
+          }
+
+          .maintenance-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: #dfeeff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #004998;
+          }
+
+          .maintenance-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+          }
+
+          .maintenance-title {
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #004998;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          }
+
+          .maintenance-text {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+            margin: 0;
+          }
+
+          @media (max-width: 600px) {
+            .maintenance-notice {
+              padding: 1rem;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.75rem;
+            }
+          }
+
           .btn-submit:hover {
             opacity: 1;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(230, 126, 34, 0.35);
+          }
+
+          .paused-indicator {
+            background: #f1f3f5;
+            color: #868e96;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: 6px;
+            margin-top: 1rem;
           }
 
           @media (max-width: 900px) {
@@ -244,33 +316,48 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-form-container">
-          <form className="form-grid" onSubmit={(e) => e.preventDefault()}>
+          <div className="maintenance-notice">
+            <div className="maintenance-icon">
+              <Info size={24} />
+            </div>
+            <div className="maintenance-content">
+              <div className="maintenance-title">SYSTEM NOTICE</div>
+              <p className="maintenance-text">
+                Our contact form is currently undergoing scheduled optimization to improve our service. 
+                In the meantime, please feel free to reach out to us directly via the contact information provided.
+              </p>
+            </div>
+          </div>
+          <form className="form-grid" style={{ opacity: 0.6, pointerEvents: 'none' }} aria-disabled="true">
             <div className="form-field">
               <label>Name</label>
-              <input type="text" placeholder="Jane Smith" required />
+              <input type="text" placeholder="Jane Smith" disabled />
             </div>
 
             <div className="form-field">
               <label>Email</label>
-              <input type="email" placeholder="jane@company.com" required />
+              <input type="email" placeholder="jane@company.com" disabled />
             </div>
 
             <div className="form-field">
               <label>Phone Number</label>
-              <input type="tel" placeholder="+1 (555) 555-1234" />
+              <input type="tel" placeholder="+1 (555) 555-1234" disabled />
             </div>
 
             <div className="form-field">
               <label>Company Name</label>
-              <input type="text" placeholder="Your Company" />
+              <input type="text" placeholder="Your Company" disabled />
             </div>
 
             <div className="form-field">
               <label>Message</label>
-              <textarea rows={4} placeholder="Tell us about your project or how we can help you..." required></textarea>
+              <textarea rows={4} placeholder="Tell us about your project or how we can help you..." disabled></textarea>
             </div>
 
-            <button type="submit" className="btn-submit">Send Message</button>
+            <div className="paused-indicator">
+              <Lock size={18} />
+              <span>Form Submissions Paused</span>
+            </div>
           </form>
         </div>
       </section>
