@@ -45,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable}`}>
       <head>
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS injected immediately */
